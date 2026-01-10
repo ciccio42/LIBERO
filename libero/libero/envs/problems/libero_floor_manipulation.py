@@ -60,10 +60,16 @@ class Libero_Floor_Manipulation(BDDLBaseDomain):
         # Create site objects
         object_sites_dict = {}
         region_dict = self.parsed_problem["regions"]
+        bin_region = [-0.01, 0.25, 0.01, 0.27]
         for object_region_name in list(region_dict.keys()):
 
             if "floor" in object_region_name:
                 ranges = region_dict[object_region_name]["ranges"][0]
+                
+                if 'bin' in object_region_name:
+                    # For bin region, we use a fixed range
+                    ranges = bin_region
+                
                 assert ranges[2] >= ranges[0] and ranges[3] >= ranges[1]
                 zone_size = ((ranges[2] - ranges[0]) / 2, (ranges[3] - ranges[1]) / 2)
                 zone_centroid_xy = (
