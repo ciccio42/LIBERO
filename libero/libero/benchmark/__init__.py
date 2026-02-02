@@ -3,7 +3,7 @@ import os
 import glob
 import random
 import torch
-
+import numpy as np
 from typing import List, NamedTuple, Type
 from libero.libero import get_libero_path
 from libero.libero.benchmark.libero_suite_task_map import libero_task_map
@@ -161,7 +161,8 @@ class Benchmark(abc.ABC):
             self.tasks[i].problem_folder,
             self.tasks[i].init_states_file,
         )
-        init_states = torch.load(init_states_path)
+        with torch.serialization.safe_globals([np.core.multiarray._reconstruct, np.ndarray]):
+            init_states = torch.load(init_states_path, weights_only=False)
         return init_states
 
     def set_task_embs(self, task_embs):
