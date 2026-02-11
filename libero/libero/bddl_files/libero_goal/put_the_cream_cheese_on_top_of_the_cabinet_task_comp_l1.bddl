@@ -1,6 +1,6 @@
 (define (problem LIBERO_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Put the bowl on the top of the cabinet)
+  (:language Put the cream cheese on the top of the cabinet)
     (:regions
       (plate_region
           (:target main_table)
@@ -107,7 +107,7 @@
   )
 
   (:obj_of_interest
-    akita_black_bowl_1
+    cream_cheese_1
     wooden_cabinet_1_top_side
   )
 
@@ -122,7 +122,7 @@
   )
 
   (:goal
-    (And (On akita_black_bowl_1 wooden_cabinet_1_top_side))
+    (And (On cream_cheese_1 wooden_cabinet_1_top_side))
   )
 
 )

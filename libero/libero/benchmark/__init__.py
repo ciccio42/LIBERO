@@ -161,8 +161,14 @@ class Benchmark(abc.ABC):
             self.tasks[i].problem_folder,
             self.tasks[i].init_states_file,
         )
-        with torch.serialization.safe_globals([np.core.multiarray._reconstruct, np.ndarray]):
-            init_states = torch.load(init_states_path, weights_only=False)
+        # Handle both old and new PyTorch versions
+        try:
+            # PyTorch 2.1.0+
+            with torch.serialization.safe_globals([np.core.multiarray._reconstruct, np.ndarray]):
+                init_states = torch.load(init_states_path, weights_only=False)
+        except AttributeError:
+            # Older PyTorch versions
+            init_states = torch.load(init_states_path)
         return init_states
 
     def set_task_embs(self, task_embs):
