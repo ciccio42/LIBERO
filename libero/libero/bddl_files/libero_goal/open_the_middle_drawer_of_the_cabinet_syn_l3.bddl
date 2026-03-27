@@ -1,6 +1,6 @@
 (define (problem LIBERO_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Open the layer of the drawer located between the top and bottom)
+  (:language Open the layer of the drawer located between the top and bottom drawers)
     (:regions
       (plate_region
           (:target main_table)
