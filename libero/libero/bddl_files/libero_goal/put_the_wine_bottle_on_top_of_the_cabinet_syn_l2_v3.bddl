@@ -1,6 +1,6 @@
 (define (problem LIBERO_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Put the object between the bowl and the rack on the top of the cabinet)
+  (:language The wine bottle must be put on the top of the cabinet)
     (:regions
       (plate_region
           (:target main_table)

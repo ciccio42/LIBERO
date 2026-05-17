@@ -1,6 +1,6 @@
 (define (problem LIBERO_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Put the object between the bowl and the rack on the top of the cabinet)
+  (:language The middle drawer of the cabinet should be opened)
     (:regions
       (plate_region
           (:target main_table)
@@ -107,8 +107,7 @@
   )
 
   (:obj_of_interest
-    wine_bottle_1
-    wooden_cabinet_1_top_side
+    wooden_cabinet_1_middle_region
   )
 
   (:init
@@ -122,7 +121,7 @@
   )
 
   (:goal
-    (And (On wine_bottle_1 wooden_cabinet_1_top_side))
+    (And (Open wooden_cabinet_1_middle_region))
   )
 
 )

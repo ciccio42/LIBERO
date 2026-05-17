@@ -1,6 +1,6 @@
 (define (problem LIBERO_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language  Put the object to the left of the bowl on the bowl)
+  (:language Put the object next to the stove on the bowl)
     (:regions
       (plate_region
           (:target main_table)

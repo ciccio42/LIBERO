@@ -1,6 +1,6 @@
 (define (problem LIBERO_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Push the object left of the wooden cabinet to the front of the stove)
+  (:language Push the object left of the cabinet to the front of the stove)
     (:regions
       (plate_region
           (:target main_table)

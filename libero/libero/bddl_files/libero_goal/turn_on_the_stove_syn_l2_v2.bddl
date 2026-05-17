@@ -1,6 +1,6 @@
 (define (problem LIBERO_Tabletop_Manipulation)
   (:domain robosuite)
-  (:language Put the object to the left of the rack on the rack)
+  (:language Let the stove be turned on)
     (:regions
       (plate_region
           (:target main_table)
@@ -107,8 +107,7 @@
   )
 
   (:obj_of_interest
-    wine_bottle_1
-    wine_rack_1_top_region
+    flat_stove_1
   )
 
   (:init
@@ -122,7 +121,7 @@
   )
 
   (:goal
-    (And (On wine_bottle_1 wine_rack_1_top_region))
+    (And (Turnon flat_stove_1))
   )
 
 )
